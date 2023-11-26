@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col-3 pt-2" *ngFor="let item of items">
+      <!-- <div class="col-3 pt-2" *ngFor="let item of categories"> -->
+      <a>
+        <div class="card card-food">
+          <img [src]="item.photoUrl" class="card-img-top" alt="Pav Bhaji" />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.menuItemName }}</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
