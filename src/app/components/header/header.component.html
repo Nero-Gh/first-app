@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="foodCategory">
+  <a class="navbar-brand" routerLink="">
     <!-- <img src="assets/Zomato_company_logo.png" style="width: 100px" alt="" /> -->
     <h3>Restaur</h3>
   </a>
@@ -21,18 +21,28 @@
         <a class="nav-link" routerLink="">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#" routerLink="category">Category</a>
+        <a class="nav-link" routerLink="/">Category</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/create-order">order</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a class="navbar-brand btn btn-outline-success" routerLink="Login"
+      @if (!loggedDat) {
+      <a class="navbar-brand btn btn-outline-success" routerLink="login"
         >Login
       </a>
-      <!-- <a class="navbar-brand btn btn-outline-success" *ngIf="!loggedDat?.userName" routerLink="Login">Login </a>  -->
-      <a class="navbar-brand">Nero</a>
-      <!-- <a class="navbar-brand" *ngIf="loggedDat?.userName" >{{loggedDat?.userName}} </a>  -->
-      <!-- <a class="navbar-brand btn btn-outline-success" (click)="logoff()" *ngIf="loggedDat?.userName" >LogOff </a>  -->
-      <a class="navbar-brand btn btn-outline-success">LogOff </a>
+      }
+
+      <a class="navbar-brand" *ngIf="loggedDat?.userName"
+        >{{ loggedDat?.userName }}
+      </a>
+      <a
+        class="navbar-brand btn btn-outline-success"
+        (click)="logoff()"
+        *ngIf="loggedDat?.userName"
+        >LogOff
+      </a>
     </form>
   </div>
 </nav>
